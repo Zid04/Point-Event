@@ -77,7 +77,7 @@ const Navbar = () => {
                             </Link>
 
                            
-                            <Link as={RouterLink} to="/about" onClick={onclose}>
+                            <Link as={RouterLink} to="/services" onClick={onclose}>
                             Service
                             </Link>
                             
