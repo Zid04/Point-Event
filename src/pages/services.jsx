@@ -16,7 +16,7 @@ import "aos/dist/aos.css";
 import orgEven from "../assets/orgEven.PNG";
 import pubImg from "../assets/pubImg.PNG";
 import videoImg from "../assets/videoImg.PNG";
-import shooting from "../assets/Shooting.PNG";
+import Shooting from "../assets/Shooting.PNG";
 import communication from "../assets/communication.PNG";
 import conseil from "../assets/conseil.PNG";
 
@@ -76,7 +76,7 @@ const Services = () => {
                 "Photographie de produits",
                 "Retouches professionnelles",
             ],
-            image: shooting,
+            image: Shooting,
         },
         {
             title: "Communication Digitale",
