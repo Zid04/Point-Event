@@ -76,11 +76,11 @@ const Navbar = () => {
                                 À propos
                             </Link>
 
-                           
+
                             <Link as={RouterLink} to="/services" onClick={onClose}>
-                            Services
+                                Services
                             </Link>
-                            
+
 
                             <Link as={RouterLink} to="/realisations" onClick={onClose}>
                                 Réalisations

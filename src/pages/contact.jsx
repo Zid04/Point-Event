@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import {
     Box,
     Heading,
@@ -16,38 +15,41 @@ import {
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-    useEffect(() => {
+    // 🔥 Initialisation des animations scroll
+    React.useEffect(() => {
         AOS.init({ duration: 1000, once: true });
     }, []);
 
-    const sendEmail = (e) => {
+    const sendWhatsApp = (e) => {
         e.preventDefault();
 
-        emailjs
-            .sendForm(
-                "service_PointE123",   // Service ID EmailJS
-                "template_3wwbfzo",  //  Template ID EmailJS
-                e.target,
-                "XYtShQggcMtKfjMI8"    //  clé publique EmailJS
-            )
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    alert("Message envoyé avec succès !");
-                    e.target.reset(); // Vider le formulaire
-                },
-                (error) => {
-                    console.log(error.text);
-                    alert("Erreur lors de l'envoi. Réessayez.");
-                }
-            );
+        const form = e.target;
+        const name = form.user_name.value;
+        const email = form.user_email.value;
+        const phone = form.user_phone.value;
+        const subject = form.subject.value;
+        const message = form.message.value;
+
+        const needs = [];
+        form.querySelectorAll('input[name="needs"]:checked').forEach((c) => needs.push(c.value));
+
+        const text = `Bonjour, je suis ${name}.\nEmail: ${email}\nTéléphone: ${phone}\nSujet: ${subject}\nBesoins: ${needs.join(", ")}\nMessage: ${message}`;
+
+        // 🔗 numéro WhatsApp du destinataire 
+        const waNumber = "237691004772";
+        const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+
+        // ouvre WhatsApp dans un nouvel onglet
+        window.open(waLink, "_blank");
+
+        // reset du formulaire
+        form.reset();
     };
 
     return (
-        <Box p={8} maxW="900px" mx="auto">
+        <Box p={8} maxW="900px" mx="auto" id="contact">
             {/* TITRE */}
             <VStack spacing={4} mb={8} data-aos="fade-up">
                 <Heading>Contactez-nous</Heading>
@@ -58,10 +60,11 @@ const Contact = () => {
             </VStack>
 
             {/* FORMULAIRE */}
-            <form onSubmit={sendEmail}>
+            <form onSubmit={sendWhatsApp}>
                 <VStack spacing={4} mb={12} data-aos="fade-up">
                     <Input name="user_name" placeholder="Nom complet" size="md" required />
                     <Input name="user_email" type="email" placeholder="Email" size="md" required />
+                    <Input name="user_phone" type="tel" placeholder="Téléphone" size="md" required />
                     <Input name="subject" placeholder="Sujet" size="md" />
                     <Textarea name="message" placeholder="Votre message" size="md" required />
 
@@ -79,7 +82,7 @@ const Contact = () => {
                         </CheckboxGroup>
                     </Box>
 
-                    <Button type="submit" colorScheme="purple" w="full">
+                    <Button type="submit" colorScheme="purple" w="full" >
                         Envoyer
                     </Button>
                 </VStack>
@@ -89,7 +92,7 @@ const Contact = () => {
             <VStack spacing={3} data-aos="fade-up">
                 <Text color="gray.600">Email: contact@pointevent.com</Text>
                 <Text color="gray.600">Téléphone: +237 691 00 47 72</Text>
-                <Text color="gray.600">Adresse: Douala, Cameroun</Text>
+                <Text color="gray.600">Adresse: Bertoua, Cameroun</Text>
 
                 {/* RÉSEAUX SOCIAUX */}
                 <HStack spacing={4} mt={4}>

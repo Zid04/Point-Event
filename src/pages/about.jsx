@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import {
     Box,
     Heading,
@@ -12,6 +11,7 @@ import {
 import { FaLightbulb, FaHeart, FaUsers, FaCheckCircle } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import equipe1 from "../assets/equipe1.JPG";
 import equipe2 from "../assets/equipe2.JPG";
 import equipe3 from "../assets/equipe3.jpg";
@@ -21,36 +21,12 @@ import equipe6 from "../assets/equipe6.JPG";
 
 // Équipe
 const equipe = [
-    {
-        nom: "Wilfried Tchouindjo",
-        poste: "Fondateur & vidéaste",
-        photo: equipe1,
-    },
-    {
-        nom: "Shado ",
-        poste: "Dj & animateur",
-        photo: equipe2,
-    },
-    {
-        nom: "Martial",
-        poste: "sonorisation & technicien",
-        photo: equipe3,
-    },
-    {
-        nom: "Modeste Ntaleh",
-        poste: "Coaching & styliste",
-        photo: equipe4,
-    },
-    {
-        nom: "DEO END Pelario",
-        poste: "Impressario & organisateur",
-        photo: equipe5,
-    },
-    {
-        nom: " Raoul Ndozen",
-        poste: "Communication & marketing",
-        photo: equipe6,
-    },
+    { nom: "Wilfried Tchouindjo", poste: "Fondateur & vidéaste", photo: equipe1 },
+    { nom: "Shado", poste: "Dj & animateur", photo: equipe2 },
+    { nom: "Martial", poste: "sonorisation & technicien", photo: equipe3 },
+    { nom: "Modeste Ntaleh", poste: "Coaching & styliste", photo: equipe4 },
+    { nom: "DEO END Pelario", poste: "Impressario & organisateur", photo: equipe5 },
+    { nom: "Raoul Ndozen", poste: "Communication & marketing", photo: equipe6 },
 ];
 
 const About = () => {
@@ -60,14 +36,16 @@ const About = () => {
             once: true,
             easing: "ease-out-cubic",
         });
+        // Refresh pour s'assurer que AOS détecte toutes les sections
+        AOS.refresh();
     }, []);
 
     return (
-        <Box p={8}>
+        <Box p={8} id="about">
             {/* HISTOIRE */}
             <VStack spacing={4} mb={12} data-aos="fade-up">
                 <HStack spacing={3}>
-                    <FaUsers size={24} color="#805AD5" />
+                    <FaUsers size={24} color="#805ad5" />
                     <Heading>Notre Histoire</Heading>
                 </HStack>
                 <Text textAlign="center" color="gray.600" maxW="800px">

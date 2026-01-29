@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import {
     Box,
     SimpleGrid,
@@ -8,26 +7,31 @@ import {
     VStack,
     HStack,
     Image,
+    Button,
 } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
-// Illustrations (à adapter à tes fichiers)
+// Illustrations
 import orgEven from "../assets/orgEven.PNG";
 import pubImg from "../assets/pubImg.PNG";
 import videoImg from "../assets/videoImg.PNG";
-import Shooting from "../assets/Shooting.PNG";
+import shooting from "../assets/Shooting.PNG";
 import communication from "../assets/communication.PNG";
 import conseil from "../assets/conseil.PNG";
 
 const Services = () => {
-    // 🔥 Initialisation des animations scroll
+    const navigate = useNavigate(); //naviguer vers la page Réalisations
+
+    // Initialisation des animations scroll
     useEffect(() => {
         AOS.init({
             duration: 1000,
             once: true,
             easing: "ease-out-cubic",
         });
+        AOS.refresh();
     }, []);
 
     const services = [
@@ -76,7 +80,7 @@ const Services = () => {
                 "Photographie de produits",
                 "Retouches professionnelles",
             ],
-            image: Shooting,
+            image: shooting,
         },
         {
             title: "Communication Digitale",
@@ -103,8 +107,8 @@ const Services = () => {
     ];
 
     return (
-        <Box p={8}>
-            <Heading mb={10} textAlign="center">
+        <Box p={8} id="services">
+            <Heading mb={10} textAlign="center" data-aos="fade-up">
                 Nos Services
             </Heading>
 
@@ -147,6 +151,27 @@ const Services = () => {
                     </HStack>
                 ))}
             </SimpleGrid>
+
+            {/* BOUTON D'ACCROCHE VERS LA PAGE REALISATIONS */}
+            <Box
+                mt={16}
+                p={8}
+
+                textAlign="center"
+
+                data-aos="fade-up"
+            >
+                <Text fontSize="lg" fontWeight="bold" mb={4}>
+                    Curieux de voir notre magie operer ?
+                </Text>
+                <Button
+                    colorScheme="purple"
+                    size="lg"
+                    onClick={() => navigate("/realisations")}
+                >
+                    C'est par ici !
+                </Button>
+            </Box>
         </Box>
     );
 };
