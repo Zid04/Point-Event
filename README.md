@@ -2,45 +2,45 @@
 
 ## Description
 
-Point-Event est une application React construite avec Vite pour prÃ©senter un site d'Ã©vÃ©nementiel, d'agence ou de services crÃ©atifs. Le projet utilise le routage cÃ´tÃ© client, des animations et des composants UI pour une expÃ©rience moderne.
+Point-Event est une application React construite avec Vite pour présenter un site d'événementiel, d'agence ou de services créatifs. Le projet utilise le routage côté client, des animations et des composants UI pour une expérience moderne.
 
-## FonctionnalitÃ©s
+## Fonctionnalités
 
-- React 18 avec Vite pour un dÃ©veloppement rapide
+- React 18 avec Vite pour un développement rapide
 - Routage client avec `react-router-dom`
-- Animations de dÃ©filement avec `aos`
+- Animations de défilement avec `aos`
 - Effets de mouvement avec `framer-motion`
-- Composants UI stylÃ©s avec `@chakra-ui/react`
+- Composants UI stylés avec `@chakra-ui/react`
 - Formulaire email avec `@emailjs/browser`
-- ESLint configurÃ© pour la qualitÃ© du code
+- ESLint configuré pour la qualité du code
 
 ## Installation
 
-Installer les dÃ©pendancesÂ :
+Installer les dépendances :
 
 ```bash
 npm install
 ```
 
-Lancer le serveur de dÃ©veloppementÂ :
+Lancer le serveur de développement :
 
 ```bash
 npm run dev
 ```
 
-Construire pour la productionÂ :
+Construire pour la production :
 
 ```bash
 npm run build
 ```
 
-PrÃ©visualiser le build de production localementÂ :
+Prévisualiser le build de production localement :
 
 ```bash
 npm run preview
 ```
 
-VÃ©rifier le code avec ESLintÂ :
+Vérifier le code avec ESLint :
 
 ```bash
 npm run lint
@@ -50,19 +50,19 @@ npm run lint
 
 - `src/` - code source
   - `App.jsx` - routage principal et structure des pages
-  - `main.jsx` - point d'entrÃ©e de l'application Vite
-  - `components/` - composants UI rÃ©utilisables
-  - `pages/` - pages : accueil, Ã  propos, services, rÃ©alisations, contact
+  - `main.jsx` - point d'entrée de l'application Vite
+  - `components/` - composants UI réutilisables
+  - `pages/` - pages : accueil, à propos, services, réalisations, contact
 - `public/` - ressources statiques
 - `index.html` - template HTML Vite
 
 ## Notes
 
-- `AOS.init()` est appelÃ© dans `src/App.jsx` pour activer les animations au scroll.
-- Les routes sont dÃ©finies avec `Routes` et `Route` de `react-router-dom`.
-- Pensez Ã  mettre Ã  jour les identifiants EmailJS dans la page de contact si vous activez l'envoi de mails.
+- `AOS.init()` est appelé dans `src/App.jsx` pour activer les animations au scroll.
+- Les routes sont définies avec `Routes` et `Route` de `react-router-dom`.
+- Pensez à mettre à jour les identifiants EmailJS dans la page de contact si vous activez l'envoi de mails.
 
-## DÃ©pendances principales
+## Dépendances principales
 
 - `react`
 - `react-dom`
@@ -77,4 +77,4 @@ npm run lint
 
 ## Licence
 
-Ce dÃ©pÃ´t est privÃ©. Modifiez cette section si le projet devient public.
+Ce dépôt est privé. Modifiez cette section si le projet devient public.
